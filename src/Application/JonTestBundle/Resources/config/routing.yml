@@ -1,0 +1,7 @@
+hello:
+    pattern:  /hello/{name}
+    defaults: { _controller: JonTestBundle:JonTest:index }
+
+dawg:
+    pattern:  /dawg/{name}
+    defaults: { _controller: JonTestBundle:JonTest:index }
