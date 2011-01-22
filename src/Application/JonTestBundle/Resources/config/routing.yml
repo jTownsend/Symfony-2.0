@@ -2,6 +2,14 @@ hello:
     pattern:  /hello/{name}
     defaults: { _controller: JonTestBundle:JonTest:index }
 
-dawg:
-    pattern:  /dawg/{name}
+bridal:
+    pattern:  /bridal/{name}
+    defaults: { _controller: JonTestBundle:JonTest:index }
+
+baby:
+    pattern:  /baby/{name}
+    defaults: { _controller: JonTestBundle:JonTest:index }
+
+birthday:
+    pattern:  /birthday/{name}
     defaults: { _controller: JonTestBundle:JonTest:index }

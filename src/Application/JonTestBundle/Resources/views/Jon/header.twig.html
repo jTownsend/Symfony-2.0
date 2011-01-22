@@ -1,0 +1,9 @@
+{% block header %}
+	<div class="header">
+    	<ul>
+        {% for store in stores %}
+            <li><a href="{{ path(store|lower, { 'name':  store }) }}">{{ store }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

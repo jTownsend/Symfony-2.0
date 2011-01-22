@@ -8,9 +8,6 @@ class JonTestController extends Controller
 {
     public function indexAction($name)
     {
-        return $this->render('JonTestBundle:Jon:index.twig.html', array('name' => $name));
-
-        // render a PHP template instead
-        // return $this->render('HelloBundle:Hello:index.php.html', array('name' => $name));
+        return $this->render('JonTestBundle:Jon:content.twig.html', array('name' => $name));
     }
 }
