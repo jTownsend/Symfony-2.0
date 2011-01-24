@@ -1,9 +1,7 @@
 {% extends "::base.twig.html" %}
 
 {% block body %}
-	<div class="main">
-        {% render "JonTestBundle:Header:index" with { } %}
-        {% block content %}{% endblock %}
-        {% render "JonTestBundle:Footer:index" with { } %}
-    </div>
+	{% render "JonTestBundle:Header:index" with { } %}
+    {% block content %}{% endblock %}
+    {% render "JonTestBundle:Footer:index" with { } %}
 {% endblock %}

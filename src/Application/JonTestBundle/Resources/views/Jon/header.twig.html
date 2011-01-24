@@ -1,9 +1,70 @@
 {% block header %}
-	<div class="header">
-    	<ul>
-        {% for store in stores %}
-            <li><a href="{{ path(store|lower, { 'name':  store }) }}">{{ store }}</a></li>
-        {% endfor %}
-        </ul>
+<div id="header_top_stripe" class="cen">
+    <div id="header_content" class="cen">
+		<div class="stores">
+            {% for store in stores %}
+                {% set selected = '' %}
+                {% if store_title == store['title'] %}
+                	{% set selected = 'selected' %}
+                {% endif %}
+            <a href="{{ path(store['href']) }}" class="{{ selected }}">
+                <img src="{{ asset(store['nav_image']) }}" width="{{ store['nav_image_w'] }}" height="{{ store['nav_image_h'] }}" />
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="cms">
+                <!-- @todo management driven for advertisement area-->
+        </div>
+        <div id="module_cart">
+            <div class="cart_box">
+                <a class="cart_img_sm" href=""></a>
+                <div class="fl items">0 items $0.00</div>
+                <a class="btn fr block" href="">check out</a>
+            </div>
+        </div>
+	</div>
+</div>
+<div id="container">
+	<div id="header">
+        <a href="" class="fl">
+            <img src="{{ asset(header['logo']) }}" title="{{ header['store'] }}" alt="{{ header['store'] }}" width="{{ header['logo_image_w'] }}" height="{{ header['logo_image_h'] }}" />
+        </a>
+        <div class="cms fl"><!-- @todo management driven --></div>
+        <div class="right">
+            <div class="links">
+                <a href="">already purchased</a> | <a title="Login" href="">login</a>
+            </div>
+    		<a href="" class="support"><div class="a">customer support</div><div class="b"> 1-888-722-0306</div></a>
+    		<div id="search">
+                <form action="" id="cse-search-box">
+                  <div>
+                    <input type="hidden" name="cx" value="" />
+                    <input type="hidden" name="cof" value="FORID:10" />
+                    <input type="hidden" name="ie" value="UTF-8" />
+                    <input class="btn" type="submit" name="sa" value="Search" />
+                    <input class="search-box" type="text" name="q" />
+                  </div>
+                </form>
+                <script type="text/javascript" src="https://www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
+            </div>
+        </div>
+        <div class="clr0"></div>
+        <div id="header_navigation">
+            <b class="edge fl"></b>
+                {% set counter = 0 %}
+                {% for category in header['navCategories'] %}
+                    <a href="">{{ category['catTitle'] }}</a>
+                    {% if header['navCategoriesLength'] != counter %}
+                    	<div>&bull;&bull;</div>
+                    {% endif %}
+                    {% set counter = counter + 1 %}
+                {% endfor %}
+
+                {% if header['navCategoriesLength'] < 4 %}
+                    <a href="">About Us</a>
+                {% endif %}
+            <b class="edge fr"></b>
+        </div>
     </div>
 {% endblock %}

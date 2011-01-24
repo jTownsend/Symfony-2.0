@@ -3,13 +3,13 @@ hello:
     defaults: { _controller: JonTestBundle:JonTest:index }
 
 bridal:
-    pattern:  /bridal/{name}
+    pattern:  /bridal/
     defaults: { _controller: JonTestBundle:JonTest:index }
 
 baby:
-    pattern:  /baby/{name}
+    pattern:  /baby/
     defaults: { _controller: JonTestBundle:JonTest:index }
 
 birthday:
-    pattern:  /birthday/{name}
+    pattern:  /birthday/
     defaults: { _controller: JonTestBundle:JonTest:index }

@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class JonTestController extends Controller
 {
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render('JonTestBundle:Jon:content.twig.html', array('name' => $name));
+        return $this->render('JonTestBundle:Jon:content.twig.html');
     }
 }

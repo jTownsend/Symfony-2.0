@@ -1,7 +1,6 @@
 {% extends "JonTestBundle::index.twig.html" %}
 
 {% block content %}
-	<div>
-    	Welcome to Funsational, {{ name }}!
-    </div>
+	{% render "JonTestBundle:Category:index" with { } %}
+	</div>
 {% endblock %}
