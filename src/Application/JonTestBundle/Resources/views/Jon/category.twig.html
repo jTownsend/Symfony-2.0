@@ -1,0 +1,69 @@
+{% block category %}
+<div id="category_menu">
+<div class="block b txtC">{{ categories['name'] }}</div>
+	{% set i = 1 %}
+
+    {% for id,category in categories['children'] %}
+    	{% if category['displayMenu'] == 0 || category['status'] == 0 %}
+        	continue
+        {% endif %}
+
+        {% set categoryURL = category['url'] %}
+
+        {% set selected = false %}
+        {% if i == categories['categorySize']) %}
+            {% set categorySelected = 'class="selected"' %}
+        {% else %}
+            {% set categorySelected = '' %}
+        {% endif %}
+
+        {% if category['children']|length > 0 %}
+            <a href="" {{ categorySelected }}>{{ category['name'] }}</a>
+
+            {# Determine if we should show child categories #}
+            {% set showChildren = false %}
+            if ($validCatId == $category['id'])
+            {
+                $showChildren = true;
+            }
+            else
+            {
+                // Loop through the child categories and see
+                // if one of them is the current category, if
+                // so we will show them all
+                foreach ($category['children'] as $child)
+                {
+                    if ($validCatId == $child['id'])
+                    {
+                        $showChildren = true;
+                    }
+                }
+            }
+
+            if ($showChildren):
+                foreach ($category['children'] as $child)
+                {
+                    if ($child['displayMenu'] == 0  || $child['status'] == 0)
+                    {
+                        continue;
+                    }
+
+                    $childURL = $child['url'];
+                    $subChildSelected = '';
+                    if ($validCatId == $child['id'])
+                    {
+                        $subChildSelected = 'selected';
+                    }
+                    echo '<a href="' . URL::build(false, array('route' => $childURL), false, true) . '" class="item_child '. $subChildSelected .'">' . $child['name'] . '</a>';
+                }
+            endif;
+        {% else %}
+            ?><a href="<?php echo URL::build(false, array('route' => $categoryURL), false, true); ?>" <?php echo $categorySelected; ?>><?php echo $category['name']; ?></a>
+        {% endif %}
+
+        {% set i = i + 1 %}
+    }
+
+</div>
+
+{% endblock %}
