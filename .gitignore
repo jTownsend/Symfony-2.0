@@ -1,3 +1,5 @@
 phpunit.xml
 autoload.php
 /vendor/
+app/cache/*
+app/logs/*

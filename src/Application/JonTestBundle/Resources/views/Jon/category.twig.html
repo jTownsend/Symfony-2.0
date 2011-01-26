@@ -1,18 +1,19 @@
 {% block category %}
+<div id="column_left">
 <div id="category_menu">
 <div class="block b txtC">{{ categories['name'] }}</div>
 	{% set i = 1 %}
 
     {% for id,category in categories['children'] %}
-    	{% if category['displayMenu'] == 0 || category['status'] == 0 %}
-        	continue
-        {% endif %}
+    	{# if category['displayMenu'] == 0 and category['status'] == 0 #}
+        	{# continue #}
+        {# endif #}
 
         {% set categoryURL = category['url'] %}
 
         {% set selected = false %}
-        {% if i == categories['categorySize'] %}
-            {% set categorySelected = 'class="selected"' %}
+        {% if i == categories['categoriesSize'] %}
+            {% set categorySelected = 'class=selected' %}
         {% else %}
             {% set categorySelected = '' %}
         {% endif %}
@@ -21,49 +22,39 @@
             <a href="" {{ categorySelected }}>{{ category['name'] }}</a>
 
             {# Determine if we should show child categories #}
-            {% set showChildren = false %}
-            if ($validCatId == $category['id'])
-            {
-                $showChildren = true;
-            }
-            else
-            {
-                // Loop through the child categories and see
-                // if one of them is the current category, if
-                // so we will show them all
-                foreach ($category['children'] as $child)
-                {
-                    if ($validCatId == $child['id'])
-                    {
-                        $showChildren = true;
-                    }
-                }
-            }
+            {# set showChildren = false #}
+            
+            {# Loop through the child categories and see #}
+            {# if one of them is the current category, if #}
+            {# so we will show them all #}
+            {# for child in category['children'] #}
+            	{# if validCatId == $child['id'] #}
+                	{# $showChildren = true; #}
+            
 
-            if ($showChildren):
-                foreach ($category['children'] as $child)
-                {
-                    if ($child['displayMenu'] == 0  || $child['status'] == 0)
-                    {
-                        continue;
-                    }
+           	{% if true %} {# showChildren #}
+                {% for child in category['children'] %}
+                    {% if child['displayMenu'] == 0 or child['status'] == 0 %}
+                    
+                    {% else %}
 
-                    $childURL = $child['url'];
-                    $subChildSelected = '';
-                    if ($validCatId == $child['id'])
-                    {
-                        $subChildSelected = 'selected';
-                    }
-                    echo '<a href="' . URL::build(false, array('route' => $childURL), false, true) . '" class="item_child '. $subChildSelected .'">' . $child['name'] . '</a>';
-                }
-            endif;
+                        {% set childURL = child['url'] %}
+                        {% set subChildSelected = '' %}
+                        {% if validCatId == child['id'] %}
+                            {% set subChildSelected = 'selected' %}
+                    	{% endif %}
+                    <a href="" class="item_child {{ subChildSelected }}">{{ child['name'] }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
         {% else %}
-            ?><a href="<?php echo URL::build(false, array('route' => $categoryURL), false, true); ?>" <?php echo $categorySelected; ?>><?php echo $category['name']; ?></a>
+            <a href="" {{ categorySelected }}>{{ category['name'] }}</a>
         {% endif %}
 
         {% set i = i + 1 %}
-    }
+    {% endfor %}
 
+</div>
 </div>
 
 {% endblock %}

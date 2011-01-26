@@ -30,6 +30,31 @@ a img
 	visibility:hidden;
 }
 
+.b
+{
+	font-weight:bold;	
+}
+
+.txtC
+{
+	text-align:center;	
+}
+
+.block
+{
+	display:block;	
+}
+
+a, input
+{
+	outline:medium none;	
+}
+
+.clr, .clear
+{
+	clear:both;	
+}
+
 .btn,.btn_special1
 {
 	background: url("http://localhost/Symfony-2.0/web/images/design/icons/printable_games_atoz/button.png") repeat-x scroll 0 bottom #31CAFC !important;
