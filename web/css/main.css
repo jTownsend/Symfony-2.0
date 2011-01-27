@@ -1,5 +1,171 @@
-.main
+#contentHome
 {
-	width:1000px;
-	margin:0 auto;
+	width:797px;
 }
+
+.home_newsletter
+{
+	background: #ddd;
+	width:294px;
+	height:190px;
+	float:right;
+	padding:15px;
+}
+
+.home_newsletter h2
+{
+	font-size:10px;
+	font-weight:normal;
+	margin:5px 0px;
+}
+
+.home_newsletter h3
+{
+	font-size:12px;
+	font-weight:normal;
+	margin:0px;
+}
+
+.home_newsletter h4
+{
+	font-size:18px;
+	font-weight:normal;
+	margin:0px;
+}
+
+.home_newsletter input
+{
+	float:left;
+	margin-right:7px;
+	width:220px;
+	height:17px;
+}
+
+.home_newsletter .line
+{
+	color:#fff;
+	width:100%;
+	letter-spacing: 8px;
+	clear:both;
+	overflow:hidden;
+}
+
+.home_newsletter a
+{
+	text-decoration: none;
+	font-weight:bold;
+	font-size:12px;
+}
+
+.home_newsletter .js-error
+{
+	margin-bottom:3px;	
+	padding:5px;
+	height:15px;
+}
+
+.home_promo1
+{
+	width:445px;
+	height:220px;
+	padding:0px 0px 0px 10px;
+	float: left;
+	color:#fff;
+	background-position-y: top;
+	background-position-x: center;
+	background: url('http://localhost/Symfony-2.0/web/images/assets/banners/sales/baby_shower_games_atoz/bingosale_babybg.png') no-repeat bottom;
+}
+
+.home_promo1 div div
+{
+	margin:0px;
+	width:175px;
+	height:45px;
+	margin-left:6px;
+	margin-bottom:10px;
+	padding:0px;
+}
+
+.home_promo1 div
+{
+	float:right;
+	display:block;
+	width:175px;
+	padding: 10px 10px 0px 0px;
+}
+
+.home_promo1 p
+{
+	padding:8px 0px;
+	margin:0px;
+	width:170px;
+	font-size:12px;
+}
+
+#contentHome h1
+{
+	font-size: 26px;
+	text-align: center;
+	clear:both;
+	padding-bottom:27px;
+	color:#7F397D;
+}
+
+/**
+ * Lucy Images
+ */
+.sprite_social
+{
+	background:url('http://localhost/Symfony-2.0/web/images/design/icons/common/common_sprites.png') repeat-y;
+	height:32px;
+	width:32px;
+	display:block;
+	clear:right;
+	float:left;
+	margin:10px 5px 1px 0px;
+}
+
+.sprite_social.delicious
+{
+	background-position: 0 0px;
+}
+
+.sprite_social.youtube
+{
+	background-position: 0 32px;
+}
+
+.sprite_social.twitter
+{
+	background-position: 0 69px;
+}
+
+.sprite_social.stumbleupon
+{
+	background-position: 0 105px;
+}
+
+.sprite_social.bookmark
+{
+	background-position: 0 141px;
+}
+
+.sprite_social.rss
+{
+	background-position: 0 178px;
+}
+
+.sprite_social.facebook
+{
+	background-position: 0 215px;
+}
+
+.sprite_social.flicker
+{
+	background-position: 0 251px;
+}
+
+.sprite_social.digg
+{
+	background-position: 0 287px;
+} 

@@ -4,12 +4,16 @@ hello:
 
 bridal:
     pattern:  /bridal/
-    defaults: { _controller: JonTestBundle:JonTest:index }
+    defaults: { _controller: JonTestBundle:Content:index }
 
 baby:
     pattern:  /baby/
-    defaults: { _controller: JonTestBundle:JonTest:index }
+    defaults: { _controller: JonTestBundle:Content:index }
 
 birthday:
     pattern:  /birthday/
-    defaults: { _controller: JonTestBundle:JonTest:index }
+    defaults: { _controller: JonTestBundle:Content:index }
+
+products:
+    pattern:  /products/category/{categoryName}
+    defaults: { _controller: JonTestBundle:Products:index }

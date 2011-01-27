@@ -43,12 +43,12 @@
                         {% if validCatId == child['id'] %}
                             {% set subChildSelected = 'selected' %}
                     	{% endif %}
-                    <a href="" class="item_child {{ subChildSelected }}">{{ child['name'] }}</a>
+                    <a href="{{ path('products/category/' ~ child['name']|lower) }}" class="item_child {{ subChildSelected }}">{{ child['name'] }}</a>
                     {% endif %}
                 {% endfor %}
             {% endif %}
         {% else %}
-            <a href="" {{ categorySelected }}>{{ category['name'] }}</a>
+            <a href="{{ path('products', { 'categoryName' : category['name']|lower }) }}" {{ categorySelected }}>{{ category['name'] }}</a>
         {% endif %}
 
         {% set i = i + 1 %}

@@ -4,3 +4,6 @@ homepage:
 
 bridal:
     resource: JonTestBundle/Resources/config/routing.yml
+
+products:
+    resource: JonTestBundle/Resources/config/routing.yml
