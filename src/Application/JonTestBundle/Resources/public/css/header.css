@@ -1,0 +1,279 @@
+#header_top_stripe
+{
+	height:78px;
+	width:100%;
+	border:none;
+    overflow:hidden;
+    position:relative;
+    z-index:1;
+	background: url("http://localhost/Symfony-2.0/web/images/design/navigation/common/header_top_bar.png") repeat-x scroll center top transparent;
+}
+
+#header_content
+{
+	width:1000px;
+	position:relative;
+}
+
+#header_content .stores
+{
+	height:76px;
+	/*width:525px;*/ /* or a multiple of 75px (or current [.stores a] total width) */
+	float:left;
+}
+
+#header_content .cms
+{
+	height:66px;
+	/*width:220px;*/
+	float:left;
+}
+
+#header_content .stores a
+{
+	width:70px;
+	height:65px;
+	background-color: #F4F4F4;
+	background-repeat: no-repeat;
+	background-position: center 2px;
+	float:left;
+	margin-right:5px;
+	display:block;
+}
+
+#header_content .stores a:hover, #header_content .stores .selected
+{
+	background-color: #fff;
+	height:80px;
+	border:none;
+}
+
+#header_content .stores a img
+{
+	margin: 0 auto;
+	margin-top:2px;
+	display:block;
+}
+
+#header .right
+{
+	float:right;
+	position:relative;
+	top:-4px;
+}
+
+#header .links
+{
+	float:right;
+	text-align: right;
+}
+
+#header .links a
+{
+	text-decoration: none;
+	font-weight: bold;
+	padding:0px 6px;
+}
+
+#header .support
+{
+	display:block;
+	width:256px;
+	height:33px;
+	text-decoration: none;
+	color:#fff;
+	clear:both;
+	float:right;
+	margin:10px 0px 0px 0px;
+	background:#000; /* will be overwritten by various stores */
+}
+
+#header .support .a
+{
+	width:60px;
+	float:left;
+	font-size: 11px;
+	font-weight:bold;
+	padding:2px 0px 0px 10px;
+}
+
+#header .support .b
+{
+	font-size:18px;
+	float:right;
+	padding:5px 10px 0px 0px;
+}
+
+#header_content
+{
+	width:1000px;
+	position:relative;
+}
+
+#header_content .stores
+{
+	height:76px;
+	float:left;
+}
+
+#header_content .cms
+{
+	height:66px;
+	float:left;
+}
+
+#header_content .stores a
+{
+	width:70px;
+	height:65px;
+	background-color: #F4F4F4;
+	background-repeat: no-repeat;
+	background-position: center 2px;
+	float:left;
+	margin-right:5px;
+	display:block;
+}
+
+#header_content .stores a:hover, #header_content .stores .selected
+{
+	background-color: #fff;
+	height:80px;
+	border:none;
+}
+
+#header_content .stores a img
+{
+	margin: 0 auto;
+	margin-top:2px;
+	display:block;
+}
+
+#header .cms
+{
+	margin: 0px 10px;
+	height: 98px;
+}
+
+/**
+ * Google Search
+ */
+#header #search
+{
+	float: right;
+	padding: 10px 0;
+	clear:both;
+}
+
+#header #search span
+{
+	padding-right: 10px;
+}
+
+form#cse-search-box input.btn
+{
+	/*width:54px;*/
+	height:22px;
+	font-family:Arial, Helvetica, sans-serif;
+	float:right;
+	margin-left:10px;
+}
+
+form#cse-search-box input.search-box
+{
+	background:none !important;
+	height:20px;
+	padding:0px !important;
+	width:180px;
+	float:right;
+}
+
+/**
+ * Cart
+ */
+#module_cart
+{
+	background:#fff;
+	height:34px;
+	width:250px;
+	margin-top:31px;
+	float:right;
+}
+
+#module_cart .cart_box
+{
+	padding:6px 12px 2px 2px;
+	height:26px;
+}
+
+#header_content .box_border
+{
+	float: right;
+}
+
+#module_cart .cart_box span
+{
+	color: #fff;
+}
+
+#module_cart .cart_box .cart_img_sm
+{
+	background:url('http://localhost/Symfony-2.0/web/images/design/icons/printable_games_atoz/cart/cart_sm.gif') no-repeat;
+	width:24px;
+	height:21px;
+	float:left;
+	cursor:pointer;
+}
+
+#module_cart .cart_box .items
+{
+	padding:4px 6px;
+	width:125px;
+	text-align:center;
+	color:#CC0000;
+}
+
+/**
+ * Navigation Bar
+ */
+
+#header_navigation
+{
+	height:38px;
+	width:100%;
+	color:#fff;
+	font-size:16px;
+	font-weight:bold;
+	padding:0 0 20px;
+}
+
+#header_navigation .edge
+{
+	width:1px;
+	height:100%;
+}
+
+#header_navigation div, #header_navigation a
+{
+
+	float:left;
+	color:#fff;
+	text-decoration: none;
+	margin:8px 40px 8px 40px;
+	position:relative;
+	z-index: 8; /* IE */
+}
+
+#header_navigation a
+{
+	width: auto !important;
+}
+
+#header_navigation
+{
+	background:url('http://localhost/Symfony-2.0/web/images/design/navigation/baby_shower_games_atoz/navigation_fill.png') repeat-x;
+}
+
+#header_navigation .edge
+{
+	background:url('http://localhost/Symfony-2.0/web/images/design/navigation/baby_shower_games_atoz/navigation_edge.png') no-repeat;
+}

@@ -1,0 +1,125 @@
+.category_header_text
+{
+	font-family: georgia, arial;
+	margin:7px 0px 0px 10px;
+	color: #7F397D;
+}
+
+.category_pagination
+{
+	width:100%;
+	border-bottom:1px solid #939393;
+	border-top:1px solid #939393;
+	margin:16px 0px;
+	padding:10px 0px;
+}
+
+.category_pagination select
+{
+	margin:0px 10px;
+}
+
+.category_product .new
+{
+	background:url('http://localhost/Symfony-2.0/web/images/design/icons/baby_shower_games_atoz/new_over.png');
+}
+
+.category_product .personalize
+{
+	background:url('http://localhost/Symfony-2.0/web/images/design/icons/baby_shower_games_atoz/personalize_over.png');
+}
+
+.js-error
+{
+	height:20px;
+	background-color:#CC9;
+	padding:10px;
+	text-align:center;
+	color:#B90637;
+	font-weight:bold;
+	margin-bottom:30px;
+}
+
+.js-error-h30
+{
+	height:30px;	
+}
+
+.category_product
+{
+	/*width:200px; */ /* 245 */ /* cant have width here due to large img in category (eg specials) */
+	margin-left:5px; /* total width 250, adjust because of tag position left 5px */
+	padding:0px 0px 80px 0px;
+	float:left;
+	position:relative;
+}
+
+.category_product .title
+{
+	display:block;
+	font-weight:bold;
+	height:34px;
+	overflow:hidden;
+}
+
+.category_product span
+{
+	padding:4px 0px 0px 0px;
+}
+
+.category_product a:first-child
+{ /* nicety, does not work in ie6 */
+	/*width:170px;*/
+}
+
+.category_product.last_column
+{
+	padding:0px 20px 80px 0px !important;
+}
+
+.category_product a, .category_product a:visited, .category_product a:link, .category_product a:active
+{
+	color:#4F4F4F;
+}
+
+.category_product .review_avg
+{
+	padding:8px 4px 4px 0px;
+}
+
+.category_product .price
+{
+	padding:4px 14px 0px 0px;
+}
+
+.category_product .new
+{
+	position:absolute;
+	display:block;
+	left:-5px;
+	top:120px;
+	height:19px;
+	width:71px;
+}
+
+.category_product .personalize
+{
+	position:absolute;
+	display:block;
+	left:-5px;
+	top:150px;
+	height:19px;
+	width:115px;
+}
+
+.btn_category_add_bag
+{
+	background-repeat: no-repeat;
+	width:96px;
+	height:30px;
+}
+
+.thumb 
+{
+    border: 1px solid #B9BABC;
+}

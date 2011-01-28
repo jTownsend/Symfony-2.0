@@ -1,4 +1,7 @@
 {% extends "JonTestBundle::index.twig.html" %}
+{% block css %}
+	<link href="{{ asset('bundles/jontest/css/main.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
 {% block content %}
 	<div class="clr"></div>
 	{% render "JonTestBundle:Category:index" with { } %}

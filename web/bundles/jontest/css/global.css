@@ -1,0 +1,155 @@
+body
+{
+	background-image: url("http://localhost/Symfony-2.0/web/images/assets/backgrounds/baby_shower_games_atoz/background.png");	
+}
+a img
+{
+	border: none;
+}
+
+.cen
+{
+	margin:0 auto;
+}
+
+.fl
+{
+	float:left;	
+}
+
+.fr
+{
+	float:right;	
+}
+
+.clr0
+{
+	clear:both;
+	display:block;
+	height:0px;
+	visibility:hidden;
+}
+
+.b
+{
+	font-weight:bold;	
+}
+
+.txtC
+{
+	text-align:center;	
+}
+
+.block
+{
+	display:block;	
+}
+
+a, input
+{
+	outline:medium none;	
+}
+
+.clr, .clear
+{
+	clear:both;	
+}
+
+.nomar
+{
+	margin: 0px;	
+}
+
+img
+{
+	border:medium none;	
+}
+
+.font_10px 
+{
+    font-size: 10px;
+}
+
+.font_12px 
+{
+    font-size: 12px;
+}
+
+.font_17px 
+{
+    font-size: 17px;
+}
+
+.btn,.btn_special1
+{
+	background: url("http://localhost/Symfony-2.0/web/images/design/icons/printable_games_atoz/button.png") repeat-x scroll 0 bottom #31CAFC !important;
+	border: 1px solid #2F7CAE;
+	color: #fff !important;
+	font-weight: bold;
+	margin: 0px;
+	font-size: 14px;
+	cursor: pointer;
+	padding:2px;
+	text-decoration: none;
+	white-space:nowrap;
+	text-transform: lowercase;
+}
+
+.btn_special1
+{
+	background:#EE237C !important;
+	border: 1px solid #fff;
+}
+
+#container
+{
+	margin:0 auto;
+	background-color:#ffffff;
+	padding:15px;
+	border:2px solid #80397D;
+	width:970px;
+	position:relative;
+	top:-16px;
+	left:0px;
+}
+
+#content
+{
+	width:797px;
+}
+
+#content_full
+{
+	width:970px;
+}
+
+h1
+{
+	font-size:20px;
+	margin:0px 0px 10px 0px;
+}
+
+h2
+{
+	color:#464646;
+	font-size:18px;
+	font-weight:bold;
+	margin: 0px;
+	padding: 0px;
+}
+
+hr
+{
+	color:#ccc;
+	background:#ccc;
+	height:1px;
+	margin:6px 0px;
+	text-align:left;
+	width: 100%;
+	border:none;
+}
+
+a, a:visited, a:active, a:link, a:focus 
+{
+    color: #4F4F4F;
+}

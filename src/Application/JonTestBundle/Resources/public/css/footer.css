@@ -1,0 +1,112 @@
+#footer
+{
+	background:#660066;
+	color:#fff;
+	width:1000px;
+	padding:15px 0px;
+	font-size: 12px;
+	margin:0px auto;
+	position: relative;
+	clear:both;
+}
+
+#footer .brands
+{
+	background:#97239d;
+}
+
+#footer .links
+{
+	width:768px;
+	margin:0 auto;
+	padding: 0px;
+	clear:both;
+}
+
+#footer h4
+{
+	margin:0px;
+	font-size:14px;
+}
+
+#footer a
+{
+	color:#fff;
+}
+
+#footer .section
+{
+	height:90px;
+	border-right:1px solid;
+	float:left;
+	padding:0px 45px;
+	margin:0px 0px 20px 0px;
+}
+
+#footer .first
+{
+	padding-left:0px;
+}
+
+#footer .last
+{
+	border:none;
+	padding-right:0px;
+}
+
+#footer .brands
+{
+	border-top:1px solid;
+	border-bottom:1px solid;
+	border-color: #fff;
+	text-align: center;
+	margin:0px auto 10px auto;
+	padding:0px 0px 10px 0px;
+	clear:both;
+	height:86px;
+	width:100%;
+}
+
+#footer .brands .title
+{
+	padding:5px 0px 10px 0px;
+}
+
+#footer .copyright
+{
+	display:block;
+	text-align: center;
+}
+
+.brands .logo
+{
+	width:33%;
+	float:left;
+}
+
+.brands .logo a
+{
+	margin:0pt auto;
+	display:block;
+}
+
+.brands .printablegames
+{
+	background:url('http://localhost/Symfony-2.0/web/images/design/navigation/common/footer_brand_printablegames.png') no-repeat center center;
+	height:37px;
+	width:219px;
+}
+
+.brands .funsational
+{
+	background:url('http://localhost/Symfony-2.0/web/images/design/navigation/common/footer_brand_funsational.png') no-repeat center center;
+	height:51px;
+	width:155px;
+}
+
+.brands .instantweddingtoasts
+{
+	background:url('http://localhost/Symfony-2.0/web/images/design/navigation/common/footer_brand_instantweddingtoasts.png') no-repeat center center;
+	height:34px;
+	width:215px;
+}

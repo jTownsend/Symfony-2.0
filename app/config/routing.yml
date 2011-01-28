@@ -7,3 +7,6 @@ bridal:
 
 products:
     resource: JonTestBundle/Resources/config/routing.yml
+
+drilldown:
+    resource: JonTestBundle/Resources/config/routing.yml
