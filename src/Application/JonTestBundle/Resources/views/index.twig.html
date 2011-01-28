@@ -4,8 +4,9 @@
 {% endblock %}
 {% block body %}
 	{% render "JonTestBundle:Header:index" with { } %}
+    {% render "CategoriesBundle:Categories:index" with { } %}
     {% block content %}
-    	Hello
+    	Content
     {% endblock %}
     {% render "JonTestBundle:Footer:index" with { } %}
 {% endblock %}

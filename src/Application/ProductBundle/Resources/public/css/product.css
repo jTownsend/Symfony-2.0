@@ -55,19 +55,38 @@
 {
 	width:27px;
 	height:33px;
-	background:url('/resources/design/icons/common/product_time.png');
+	background:url('../../../images/design/icons/common/product_time.png');
 }
 
 .img_product_players
 {
 	width:33px;
 	height:40px;
-	background:url('/resources/design/icons/common/product_players.png');
+	background:url('../../../images/design/icons/common/product_players.png');
 }
 
 .img_product_winners
 {
 	width:27px;
 	height:37px;
-	background:url('/resources/design/icons/common/product_winners.png');
+	background:url('../../../images/design/icons/common/product_winners.png');
+}
+
+.fg_color_pri
+{
+	color:#80397D;
+}
+
+.trajan
+{
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sub_heading
+{
+	border-bottom: 1px solid #939393;
+	color: #000;
+	height: 20px;
+	margin-bottom: 10px;
+	font-size:15px;
 }

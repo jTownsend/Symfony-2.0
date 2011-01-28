@@ -1,0 +1,3 @@
+product:
+    pattern: /product/{urlTitle}
+    defaults: { _controller: ProductBundle:Product:index }

@@ -1,12 +1,12 @@
 <?php
 
-namespace Application\JonTestBundle\Controller;
+namespace Application\ProductBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DrilldownController extends Controller
+class ProductController extends Controller
 {
-    public function indexAction($productName)
+    public function indexAction($urlTitle)
     {
 	   	$product = array(
 			'baby-bingo' => array(
@@ -25,6 +25,6 @@ class DrilldownController extends Controller
 			),
 		);
 
-		return $this->render('JonTestBundle:Jon:drilldown.twig.html', array('product' => $product[$productName]));
+		return $this->render('ProductBundle:Product:product.twig.html', array('product' => $product[$urlTitle]));
     }
 }

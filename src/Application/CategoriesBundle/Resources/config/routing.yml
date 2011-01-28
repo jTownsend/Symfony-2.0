@@ -1,0 +1,2 @@
+categories:
+    defaults: { _controller: CategoriesBundle:Categories:index }

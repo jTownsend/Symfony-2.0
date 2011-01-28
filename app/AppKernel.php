@@ -27,6 +27,8 @@ class AppKernel extends Kernel
 
             // register your bundles
             new Application\JonTestBundle\JonTestBundle(),
+			new Application\ProductBundle\ProductBundle(),
+			new Application\CategoriesBundle\CategoriesBundle(),
         );
 
         if ($this->isDebug()) {
@@ -39,9 +41,10 @@ class AppKernel extends Kernel
     public function registerBundleDirs()
     {
         return array(
-            'Application'     => __DIR__.'/../src/Application',
-            'Bundle'          => __DIR__.'/../src/Bundle',
-            'Symfony\\Bundle' => __DIR__.'/../src/vendor/symfony/src/Symfony/Bundle',
+            'Application'    		=> __DIR__.'/../src/Application',
+            'Bundle'          		=> __DIR__.'/../src/Bundle',
+            'Symfony\\Bundle' 		=> __DIR__.'/../src/vendor/symfony/src/Symfony/Bundle',
+			'Bundle\\Ecommerce'  	=> __DIR__.'/../src/Bundle/Ecommerce',
         );
     }
 

@@ -65,19 +65,52 @@ img
 	border:medium none;	
 }
 
-.font_10px 
-{
-    font-size: 10px;
+.font_8px{
+	font-size:10px
 }
 
-.font_12px 
-{
-    font-size: 12px;
+.font_9px{
+	font-size:9px
 }
 
-.font_17px 
-{
-    font-size: 17px;
+.font_10px{
+	font-size:10px
+}
+
+.font_11px{
+	font-size:11px
+}
+
+.font_12px{
+	font-size:12px
+}
+
+.font_13px{
+	font-size:13px
+}
+
+.font_14px{
+	font-size:14px
+}
+
+.font_15px{
+	font-size:15px
+}
+
+.font_16px{
+	font-size:16px
+}
+
+.font_17px{
+	font-size:17px
+}
+
+.font_18px{
+	font-size:18px
+}
+
+.font_19px{
+	font-size:19px
 }
 
 .btn,.btn_special1

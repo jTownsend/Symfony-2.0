@@ -1,62 +1,11 @@
 {% extends "JonTestBundle::index.twig.html" %}
-{% block content %}
-	<div class="clr"></div>
-	{% render "JonTestBundle:Category:index" with { } %}
-    <div id="content" class="fl">
-		<img src="{{ asset(category['image']) }}" class="fl" alt="{{ category['title'] }}" />
-        <div class="category_header_text fl b font_17px">BABY SHOWER GAMES</div>
-	<div class="clr"></div>
-    <form method="get" action="" class="pagination">
-		<div class="category_pagination fl clr font_12px">
-			<div class="fl">
-				Sort By:
-				<select onchange="this.form.submit()" class="font_10px" name="sort" id="sort_order">
-					<option selected="selected" value="pop">Most Popular</option>
-					<option value="name">Name</option>
-					<option value="rating">Top Rated</option>
-				</select>
-			</div>
-			<div class="fr"><div class="fr">Games 1 - {{ category['count'] }} of {{ category['count'] }}</div></div>
-        </div>
-	</form>
-    <noscript> 
-        <div class="js-error">
-            Please enable JavaScript in your browser to fully experience this site and to add products to your bag.
-        </div>
-    </noscript>
-		{% set counter = 1 %}
-		{% set class = '' %}
+{% block css %}
 
-        {% for product in products %} 
-		<div class="category_product {{ class }}" style="width:250px;">
-			<a href="{{ path('drilldown', { 'productName' : product['urlTitle']|lower }) }}" class="block" style="width: 150px;">
-				<img src="{{ asset(product['thumb']) }}"  class="thumb" style="width: 150px;" />
-			</a>
-			{% if product['new'] %}
-				<a class="new" href=""></a>
-			{% endif %}
-			{% if product['personalize'] %}
-				<a class="personalize" href=""></a>
-			{% endif %}
-			
-            <div>
-				<a href="" class="title" style="width: 250px;">{{ product['title'] }}</a>
-				<a href="" class="review_avg fl block">
-					<img src="{{ asset('images/design/reviews/rvw-5.gif') }}" />
-				</a>
-				<span class="review_avg fl">(30)</span>
-            </div>
-			<div class="clr">
-				<span class="price fl b block">Price: <span class="price_amount">{{ product['price'] }}</span></span>
-				<script>
-                document.write('<div id="product_1" class="btn fl curHand btn_product_add_bag">add to bag</div>');
-				</script>
-            </div>
-		</div>
-		{% set counter = counter + 1 %}
-        {% endfor %}
-		
-		<div class="clr"></div>
+{% endblock %}
+{% block content %}
+    <div id="content" class="fl">
+    	{% render "CategoriesBundle:Categories:header" with { 'categoryName' : category } %}
+        <div class="clr"></div>
         <form method="get" action="" class="pagination">
             <div class="category_pagination fl clr font_12px">
                 <div class="fl">
@@ -67,11 +16,62 @@
                         <option value="rating">Top Rated</option>
                     </select>
                 </div>
-                <div class="fr"><div class="fr">Games 1 - {{ category['count'] }} of {{ category['count'] }}</div></div>
+                <div class="fr"><div class="fr">Games 1 - 5 of 5</div></div>
             </div>
         </form>
-    	<div class="clr"></div>
-	</div>
+        <noscript> 
+            <div class="js-error">
+                Please enable JavaScript in your browser to fully experience this site and to add products to your bag.
+            </div>
+        </noscript>
+        {% set counter = 1 %}
+        {% set class = '' %}
+
+        {% for product in products %} 
+        <div class="category_product {{ class }}" style="width:250px;">
+            <a href="{{ path('product', { 'urlTitle' : product['urlTitle']|lower }) }}" class="block" style="width: 150px;">
+                <img src="{{ asset(product['thumb']) }}"  class="thumb" style="width: 150px;" />
+            </a>
+            {% if product['new'] %}
+                <a class="new" href=""></a>
+            {% endif %}
+            {% if product['personalize'] %}
+                <a class="personalize" href=""></a>
+            {% endif %}
+            
+            <div>
+                <a href="" class="title" style="width: 250px;">{{ product['title'] }}</a>
+                <a href="" class="review_avg fl block">
+                    <img src="{{ asset('images/design/reviews/rvw-5.gif') }}" />
+                </a>
+                <span class="review_avg fl">(30)</span>
+            </div>
+            <div class="clr">
+                <span class="price fl b block">Price: <span class="price_amount">{{ product['price'] }}</span></span>
+                <script>
+                document.write('<div id="product_1" class="btn fl curHand btn_product_add_bag">add to bag</div>');
+                </script>
+            </div>
+        </div>
+        {% set counter = counter + 1 %}
+        {% endfor %}
+        
+        <div class="clr"></div>
+        <form method="get" action="" class="pagination">
+            <div class="category_pagination fl clr font_12px">
+                <div class="fl">
+                    Sort By:
+                    <select onchange="this.form.submit()" class="font_10px" name="sort" id="sort_order">
+                        <option selected="selected" value="pop">Most Popular</option>
+                        <option value="name">Name</option>
+                        <option value="rating">Top Rated</option>
+                    </select>
+                </div>
+                <div class="fr"><div class="fr">Games 1 - 5 of 5</div></div>
+            </div>
+        </form>
+        <div class="clr"></div>
+    </div>
     <div class="clr"></div>
 </div>
 {% endblock %}

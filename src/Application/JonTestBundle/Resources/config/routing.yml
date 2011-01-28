@@ -18,6 +18,5 @@ products:
     pattern:  /products/category/{categoryName}
     defaults: { _controller: JonTestBundle:Products:index }
 
-drilldown:
-    pattern:  /drilldown/{productName}
-    defaults: { _controller: JonTestBundle:Drilldown:index }
+product:
+    resource: ProductBundle/Resources/config/routing.yml

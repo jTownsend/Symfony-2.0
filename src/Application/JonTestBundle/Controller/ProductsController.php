@@ -114,30 +114,7 @@ class ProductsController extends Controller
 				),
 			),
 		);
-		
-		$category = array(
-			'sweet' => array(
-				'title' 	=> $categoryName,
-				'image' 	=> 'images/assets/categories/baby_shower_games_atoz/catg_bingo.png',
-				'count'		=> 2,
-			),
-			'dude' => array(
-				'title' 	=> $categoryName,
-				'image' 	=> 'images/assets/categories/baby_shower_games_atoz/catg_animal.png',
-				'count'		=> 3,
-			),
-			'whoa' => array(
-				'title' 	=> $categoryName,
-				'image' 	=> 'images/assets/categories/baby_shower_games_atoz/catg_easy.png',
-				'count'		=> 3,
-			),
-			'what' => array(
-				'title' 	=> $categoryName,
-				'image' 	=> 'images/assets/categories/baby_shower_games_atoz/catg_word.png',
-				'count'		=> 4,
-			),
-		);
 
-		return $this->render('JonTestBundle:Jon:products.twig.html', array('products' => $products[$categoryName], 'category' => $category[$categoryName]));
+		return $this->render('JonTestBundle:Jon:products.twig.html', array('products' => $products[$categoryName], 'category' => $categoryName));
     }
 }
