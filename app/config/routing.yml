@@ -7,3 +7,8 @@ bridal:
 
 products:
     resource: JonTestBundle/Resources/config/routing.yml
+
+# app/config/routing.yml
+_assetpackager:
+    resource: Tecbot/AssetPackagerBundle/Resources/config/routing.yml
+    prefix:   /_ap

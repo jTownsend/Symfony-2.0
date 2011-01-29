@@ -34,3 +34,17 @@ twig.config:
 #    host:       smtp.gmail.com
 #    username:   xxxxxxxx
 #    password:   xxxxxxxx
+
+# Asset Packager Bundle
+assetpackager.config:
+    js: # Javascript Config
+        packages: # Javascript Packages
+            pack1: # Package Name
+                - bundles/bundle/js/pack1.js
+                - bundles/bundle/js/pack1_1.js
+    css: # Stylesheet Config
+        packages: # Stylesheet Packages
+            pack1: # Package Name
+                - bundles/bundle/css/pack1.css
+                - bundles/bundle/css/pack1_1.css
+
