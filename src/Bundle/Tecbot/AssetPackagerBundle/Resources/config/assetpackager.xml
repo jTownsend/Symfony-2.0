@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://www.symfony-project.org/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <!-- main -->
+        <parameter key="assetpackager.manager.class">Bundle\Tecbot\AssetPackagerBundle\Packager\Manager</parameter>
+        <parameter key="assetpackager.options.assets_path">%kernel.root_dir%/../web</parameter>
+        <parameter key="assetpackager.options.cache_path">%kernel.cache_dir%/assetpackager</parameter>
+        <parameter key="assetpackager.options.compress_assets">true</parameter>
+        <parameter key="assetpackager.options.package_assets">true</parameter>
+        
+        <!-- packages -->
+        <parameter key="assetpackager.packages.js" type="collection"></parameter>
+        <parameter key="assetpackager.packages.css" type="collection"></parameter>
+        
+        <!-- javascript compressors -->
+        <parameter key="assetpackager.compressor.js.jsmin.class">Bundle\Tecbot\AssetPackagerBundle\Packager\Compressor\Javascript\JSMinCompressor</parameter>
+        <parameter key="assetpackager.compressor.js.jsmin.options" type="collection"></parameter>
+        <parameter key="assetpackager.compressor.js.packer.class">Bundle\Tecbot\AssetPackagerBundle\Packager\Compressor\Javascript\PackerCompressor</parameter>
+        <parameter key="assetpackager.compressor.js.packer.options" type="collection"></parameter>
+        <parameter key="assetpackager.compressor.js.yui.class">Bundle\Tecbot\AssetPackagerBundle\Packager\Compressor\Javascript\YUIJavascriptCompressor</parameter>
+        <parameter key="assetpackager.compressor.js.yui.options" type="collection"></parameter>
+        <parameter key="assetpackager.compressor.js.closure.class">Bundle\Tecbot\AssetPackagerBundle\Packager\Compressor\Javascript\GoogleClosureCompressor</parameter>
+        <parameter key="assetpackager.compressor.js.closure.options" type="collection"></parameter>
+        <parameter key="assetpackager.compressor.js.options" type="collection"></parameter>
+        
+        <!-- stylesheet compressors -->
+        <parameter key="assetpackager.compressor.css.cssmin.class">Bundle\Tecbot\AssetPackagerBundle\Packager\Compressor\Stylesheet\CSSMinCompressor</parameter>
+        <parameter key="assetpackager.compressor.css.cssmin.options" type="collection"></parameter>
+        <parameter key="assetpackager.compressor.css.yui.class">Bundle\Tecbot\AssetPackagerBundle\Packager\Compressor\Stylesheet\YUIStylesheetCompressor</parameter>
+        <parameter key="assetpackager.compressor.css.yui.options" type="collection"></parameter>
+        <parameter key="assetpackager.compressor.css.options" type="collection"></parameter>
+        
+        <!-- dumper -->
+        <parameter key="assetpackager.dumper.class">Bundle\Tecbot\AssetPackagerBundle\Packager\Dumper\Dumper</parameter>
+    </parameters>
+    
+    <services>
+        
+        <service id="assetpackager.manager" class="%assetpackager.manager.class%" shared="true">
+            <argument type="service" id="service_container" />
+            <argument type="service" id="assetpackager.dumper" />
+            <argument type="collection">
+                <argument key="assets_path">%assetpackager.options.assets_path%</argument>
+                <argument key="cache_path">%assetpackager.options.cache_path%</argument>
+                <argument key="compress_assets">%assetpackager.options.compress_assets%</argument>
+                <argument key="package_assets">%assetpackager.options.package_assets%</argument>
+                <argument key="debug">%kernel.debug%</argument>
+            </argument>
+            <argument type="collection">
+                <argument key="js">%assetpackager.packages.js%</argument>
+                <argument key="css">%assetpackager.packages.css%</argument>
+            </argument>
+        </service>
+        
+        <service id="assetpackager.compressor.js.jsmin" class="%assetpackager.compressor.js.jsmin.class%">
+            <call method="setOptions">
+                <argument type="collection">%assetpackager.compressor.js.jsmin.options%</argument>
+                <argument>true</argument>
+            </call>
+        </service>
+        
+        <service id="assetpackager.compressor.js.packer" class="%assetpackager.compressor.js.packer.class%">
+            <call method="setOptions">
+                <argument type="collection">%assetpackager.compressor.js.packer.options%</argument>
+                <argument>true</argument>
+            </call>
+        </service>
+        
+        <service id="assetpackager.compressor.js.yui" class="%assetpackager.compressor.js.yui.class%">
+            <call method="setOptions">
+                <argument type="collection">%assetpackager.compressor.js.yui.options%</argument>
+                <argument>true</argument>
+            </call>
+        </service>
+        
+        <service id="assetpackager.compressor.js.closure" class="%assetpackager.compressor.js.closure.class%">
+            <call method="setOptions">
+                <argument type="collection">%assetpackager.compressor.js.closure.options%</argument>
+                <argument>true</argument>
+            </call>
+        </service>
+        
+        <service id="assetpackager.compressor.css.cssmin" class="%assetpackager.compressor.css.cssmin.class%">
+            <call method="setOptions">
+                <argument type="collection">%assetpackager.compressor.css.cssmin.options%</argument>
+                <argument>true</argument>
+            </call>
+        </service>
+        
+        <service id="assetpackager.compressor.css.yui" class="%assetpackager.compressor.css.yui.class%">
+            <call method="setOptions">
+                <argument type="collection">%assetpackager.compressor.css.yui.options%</argument>
+                <argument>true</argument>
+            </call>
+        </service>
+        
+        <service id="assetpackager.dumper" class="%assetpackager.dumper.class%" />
+        
+    </services>
+</container>

@@ -1,0 +1,4 @@
+_assetpackager_get:
+  pattern: /:file.:_format
+  defaults: { _controller: assetpackager.controller.packager:getAction }
+  requirements: { _format: (css|js) }

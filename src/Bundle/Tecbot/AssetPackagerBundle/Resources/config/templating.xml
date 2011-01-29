@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://www.symfony-project.org/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="templating.helper.assetpackager.class">Bundle\Tecbot\AssetPackagerBundle\Templating\Helper\AssetPackagerHelper</parameter>
+        <parameter key="twig.extension.assetpackager.class">Bundle\Tecbot\AssetPackagerBundle\Twig\Extension\AssetPackagerExtension</parameter>
+    </parameters>
+    
+    <services>
+        
+        <service id="templating.helper.assetpackager" class="%templating.helper.assetpackager.class%">
+            <tag name="templating.helper" alias="assetpackager" />
+            <argument type="service" id="templating.helper.assets" />
+            <argument type="service" id="templating.helper.router" />
+            <argument type="service" id="assetpackager.manager" />
+            <argument type="collection">
+                <argument key="package_assets">%assetpackager.options.package_assets%</argument>
+                <argument key="compress_assets">%assetpackager.options.compress_assets%</argument>
+            </argument>
+        </service>
+        
+        <service id="twig.extension.assetpackager" class="%twig.extension.assetpackager.class%" public="false">
+            <tag name="twig.extension" />
+            <argument type="service" id="templating.helper.assetpackager" />
+        </service>
+        
+    </services>
+</container>
