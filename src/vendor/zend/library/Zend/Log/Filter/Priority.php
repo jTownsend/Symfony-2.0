@@ -55,7 +55,7 @@ class Priority extends AbstractFilter
      */
     public function __construct($priority, $operator = null)
     {
-		if (! is_integer($priority)) {
+        if (! is_integer($priority)) {
             throw new \Zend\Log\Exception\InvalidArgumentException('Priority must be an integer');
         }
 
