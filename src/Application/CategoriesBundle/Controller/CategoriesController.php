@@ -8,7 +8,17 @@ class CategoriesController extends Controller
 {
     public function indexAction()
     {
-        $categories = array(
+        /*$mailer = $this->get('mailer');
+		
+		$message = \Swift_Message::newInstance()
+			->setSubject('Hello Email')
+			->setFrom('jtownsend54@gmail.com')
+			->setTo('jtownsend54@gmail.com')
+			->setBody('Email working!');
+			
+		$mailer->send($message);*/
+		
+		$categories = array(
 			'name' 				=> 'Printable Games',
 			'categoriesSize' 	=> '4',
 			'children' 			=> array(

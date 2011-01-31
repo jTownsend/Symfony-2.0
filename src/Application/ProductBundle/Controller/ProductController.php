@@ -2,13 +2,21 @@
 
 namespace Application\ProductBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller,
+	Bundle\ProductBundle\Entity\Product;
 
 class ProductController extends Controller
 {
     public function indexAction($urlTitle)
     {
-	   	$product = array(
+	   	$em = $this->get('doctrine.orm.entity_manager');
+		$product = new Product();
+		$product->setTitle('Halloween Bingo');
+		
+		$em->persist($product);
+		$em->flush();
+		
+		$product = array(
 			'baby-bingo' => array(
 				'magicZoom' 		=> 'images/assets/games/b/babybingo/drilldowns/babybingo_mzoom.png',
 				'magicZoomPreview' 	=> 'images/assets/games/b/babybingo/drilldowns/babybingo_mzoom.png',

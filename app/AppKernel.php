@@ -27,9 +27,11 @@ class AppKernel extends Kernel
 
             // register your bundles
             new Application\JonTestBundle\JonTestBundle(),
+			new Bundle\ProductBundle\ProductBundle(),
 			new Application\ProductBundle\ProductBundle(),
 			new Application\CategoriesBundle\CategoriesBundle(),
 			new Bundle\Tecbot\AssetPackagerBundle\TecbotAssetPackagerBundle(),
+			
         );
 
         if ($this->isDebug()) {

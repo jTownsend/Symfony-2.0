@@ -16,24 +16,26 @@ twig.config:
     strict_variables: %kernel.debug%
 
 ## Doctrine Configuration
-#doctrine.dbal:
-#    dbname:   xxxxxxxx
-#    user:     xxxxxxxx
-#    password: ~
+doctrine.dbal:
+    dbname:   symfony
+    user:     root
+    password: root
 
-#doctrine.orm:
-#    auto_generate_proxy_classes: %kernel.debug%
-#    mappings:
-#        HelloBundle: ~
+doctrine.orm:
+    auto_generate_proxy_classes: %kernel.debug%
+    mappings:
+        ProductBundle: 
+            type: annotation
+            dir: Entity/
 
 ## Swiftmailer Configuration
-#swiftmailer.config:
-#    transport:  smtp
-#    encryption: ssl
-#    auth_mode:  login
-#    host:       smtp.gmail.com
-#    username:   xxxxxxxx
-#    password:   xxxxxxxx
+swiftmailer.config:
+    transport:  smtp
+    encryption: ssl
+    auth_mode:  login
+    host:       smtp.gmail.com
+    username:   jtownsend54@gmail.com
+    password:   j)rdan23
 
 # Asset Packager Bundle
 assetpackager.config:
@@ -45,6 +47,11 @@ assetpackager.config:
     css: # Stylesheet Config
         packages: # Stylesheet Packages
             pack1: # Package Name
+                compressor:
+                    id: cssmin
+                    options: 
+                        compress-unit-values: true
+                paths:
                 - bundles/bundle/css/pack1.css
                 - bundles/bundle/css/pack1_1.css
 
