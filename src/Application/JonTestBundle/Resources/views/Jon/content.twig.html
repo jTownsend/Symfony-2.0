@@ -3,51 +3,7 @@
 	<link href="{{ asset('bundles/jontest/css/main.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 {% block content %}
-    <div id="contentHome" class="fl">
-        <map name="znav">
-            <area shape="rect" coords="1,1,530,340" href="" alt="All Printable Bridal Shower Games" />
-            <area shape="rect" coords="531,1,796,340" href="" alt="Printable Bachelorette Games" />
-        </map>
-        <img class="unitPng" usemap="#znav" width="800px" height="450px" style="" alt="Printable Bridal Shower Games" src="{{ asset(content['banner']) }}" />
-        <h1>Bridal Shower Games You Can Print From Your Computer!</h1>
-        <div class="clr"> </div>
-        <div class="home_promo1">
-            <div class="fr">
-                <div id="wsgazTitle"><img class="unitPng" width="136px" height="45px" src="{{ asset(content['bingoSale']) }}" /></div>
-                <p>
-                    We have been very busy here at PrintableGamesAtoZ.com and we are proud to announce that our new bingos are now available.
-                    <br/>We decided to kick things up a notch with bold color and loads of personality.
-                    <br/>
-                </p>
-                <a href="" class="btn_special1 fr">checkout the fun!</a>
-            </div>
-        </div>
-        <form class="home_newsletter">
-            <h4>BE THE FIRST TO KNOW</h4>
-            <h3>ABOUT GAME UPDATES AND MORE</h3>
-            <h2>Printable Games Newsletter - great ideas
-            <br/> for parties, showers, events and more</h2>
-            <noscript>
-                <div class="js-error">
-                    Please enable JavaScript to subscribe.
-                </div>
-            </noscript>
-            <script>
-                document.write('<div class="btn fr">sign up</div>'+
-                '<p class="nomar"><input type="text" value="Enter Your E-mail Address" id="txtNewsletterFooter" name="txtNewsletterFooter" /></p>');
-            </script>
-            <div class="clr">&nbsp;</div>
-            <p class="nomar">
-                <a href="http://www.facebook.com/funsational" class="sprite_social facebook" title="Facebook"> </a>
-                <a href="http://www.twitter.com/funsational" class="sprite_social twitter" title="Twitter"> </a>
-                <a href="http://www.flickr.com/photos/37727081@N04/" class="sprite_social flicker"title="Flickr"> </a>
-                <a href="http://www.youtube.com/funsational" class="sprite_social youtube" title="YouTube"> </a>
-            </p>
-            <div class="line">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</div>
-            <a href="http://funsational.com/?page_id=98">VISIT OUR BLOG</a>
-        </form>
-        <div class="clr"></div>
-    </div>
+	{{ content|raw }}
     <div class="clr"></div>
 	</div>
 {% endblock %}

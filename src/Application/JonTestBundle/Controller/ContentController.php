@@ -8,11 +8,24 @@ class ContentController extends Controller
 {
     public function indexAction()
     {
-        $content = array(
+        $em = $this->get('doctrine.orm.entity_manager');
+		$query = $em->createQuery('SELECT s FROM Bundle\Ecommerce\StoreBundle\Entity\Store s');
+		$stores = $query->getResult();
+		
+		foreach($stores as $store)
+		{
+			if($store->getCheckoutKey() == 'baby')
+			{
+				$curStore = $store;
+				break;
+			}
+		}
+		
+		$content = array(
 			'banner' => 'images/assets/banners/billboards/baby_shower_games_atoz/billboard_final_baby.png',
 			'bingoSale' => 'images/assets/banners/sales/baby_shower_games_atoz/bingosale_babytitle.png'
 		);
 
-		return $this->render('JonTestBundle:Jon:content.twig.html', array('content' => $content));
+		return $this->render('JonTestBundle:Jon:content.twig.html', array('content' => $curStore->getLandingPage()));
     }
 }

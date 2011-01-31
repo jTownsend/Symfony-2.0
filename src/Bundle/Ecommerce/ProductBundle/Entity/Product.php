@@ -9,7 +9,7 @@
  *
  */
  
-namespace Bundle\ProductBundle\Entity;
+namespace Bundle\Ecommerce\ProductBundle\Entity;
 
 /**
  * @orm:Entity
@@ -44,13 +44,6 @@ class Product
      * @orm:Column(name="price", type="decimal", scale=2)
      */
     private $price = 0.00;
-	
-	/**
-     * @orm:var string $test
-     *
-     * @orm:Column(name="test", type="string", length=255)
-     */
-    private $test = '';
 	
 	/**
 	 * Set the title of the product

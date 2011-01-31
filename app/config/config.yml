@@ -27,6 +27,9 @@ doctrine.orm:
         ProductBundle: 
             type: annotation
             dir: Entity/
+        StoreBundle: 
+            type: annotation
+            dir: Entity/
 
 ## Swiftmailer Configuration
 swiftmailer.config:

@@ -4,12 +4,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}Printable Games | Symfony{% endblock %}</title>
         
-        {{ assetpackage('bundles/jontest/css/header.css', 'css') }}
-        {{ assetpackages() }}
-        
-        <link href="{{ asset('undles/jontest/css/clear.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('bundles/jontest/css/clear.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('bundles/jontest/css/global.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('undles/jontest/css/header.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('bundles/jontest/css/header.css') }}" rel="stylesheet" type="text/css" />
         {% block css %}{% endblock %}
         <link href="{{ asset('bundles/categories/css/leftnav.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('bundles/categories/css/header.css') }}" rel="stylesheet" type="text/css" />
