@@ -31,6 +31,12 @@ doctrine.orm:
             type: annotation
             dir: Entity/
 
+services:
+    tableprefix:
+        class: TablePrefix
+        tags:
+        - { name: doctrine.dbal.default_event_listener }
+
 ## Swiftmailer Configuration
 swiftmailer.config:
     transport:  smtp

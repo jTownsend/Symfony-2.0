@@ -1,0 +1,35 @@
+<?php
+namespace DoctrineExtensions;
+use \Doctrine\ORM\Event\LoadClassMetadataEventArgs;
+
+class TablePrefix
+{
+    protected $_prefix = '';
+
+    private $_updated = array();
+
+    public function __construct($prefix)
+    {
+        $this->_prefix = (string) $prefix;
+    }
+
+    public function loadClassMetadata(LoadClassMetadataEventArgs $eventArgs)
+    {
+
+        $classMetadata = $eventArgs->getClassMetadata();
+
+    	if (in_array($classMetadata->getTableName(), $this->_updated))
+    	{
+    		return;
+    	}
+
+    	if (strpos($classMetadata->getTableName(), $this->_prefix) !== false)
+    	{
+    		return;
+    	}
+
+        $classMetadata->setTableName($this->_prefix . $classMetadata->getTableName());
+
+        $this->_updated[] = $classMetadata->getTableName();
+    }
+}
