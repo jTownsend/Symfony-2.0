@@ -34,7 +34,7 @@ doctrine.orm:
 
 services:
     tableprefix:
-        class: DoctrineExtensions\TablePrefix
+        class: TablePrefix
         tags:
         - { name: doctrine.dbal.default_event_listener }
 
