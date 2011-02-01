@@ -27,8 +27,9 @@ class AppKernel extends Kernel
 
             // register your bundles
             new Application\JonTestBundle\JonTestBundle(),
-			new Bundle\Ecommerce\ProductBundle\ProductBundle(),
-			new Bundle\Ecommerce\StoreBundle\StoreBundle(),
+			new Bundle\ProductBundle\ProductBundle(),
+			new Bundle\ReviewBundle\ReviewBundle(),
+			new Bundle\StoreBundle\StoreBundle(),
 			new Application\ProductBundle\ProductBundle(),
 			new Application\CategoriesBundle\CategoriesBundle(),
 			new Bundle\Tecbot\AssetPackagerBundle\TecbotAssetPackagerBundle(),

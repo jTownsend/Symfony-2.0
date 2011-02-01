@@ -10,7 +10,7 @@ class FooterController extends Controller
     public function indexAction()
     {
         $em = $this->get('doctrine.orm.entity_manager');
-		$query = $em->createQuery('SELECT s FROM Bundle\Ecommerce\StoreBundle\Entity\Store s');
+		$query = $em->createQuery('SELECT s FROM Bundle\StoreBundle\Entity\Store s');
 		$stores = $query->getResult();
 		
 		foreach($stores as $store)

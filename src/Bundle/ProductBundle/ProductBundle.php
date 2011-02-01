@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\Ecommerce\ProductBundle;
+namespace Bundle\ProductBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

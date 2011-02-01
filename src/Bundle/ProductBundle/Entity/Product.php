@@ -9,7 +9,7 @@
  *
  */
  
-namespace Bundle\Ecommerce\ProductBundle\Entity;
+namespace Bundle\ProductBundle\Entity;
 
 /**
  * @orm:Entity
@@ -46,11 +46,16 @@ class Product
     private $price = 0.00;
 	
 	/**
+	 * @orm:OneToMany(targetEntity="%review.product_entity%", mappedBy="Product")
+	 * @orm:OrderBy({"dateAdded" = "DESC"})
+	 */
+	private $Reviews;
+	
+	/**
 	 * Set the title of the product
 	 * 
 	 * @param $title  The product title
 	 */
-	 
 	public function setTitle($title)
 	{
 		$this->title = $title; 

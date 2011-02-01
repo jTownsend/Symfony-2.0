@@ -31,12 +31,16 @@ doctrine.orm:
         StoreBundle: 
             type: annotation
             dir: Entity/
+        ReviewBundle: 
+            type: annotation
+            dir: Entity/
 
 services:
     tableprefix:
-        class: TablePrefix
+        class: DoctrineExtensions\TablePrefixListener
+        arguments: [local_]
         tags:
-        - { name: doctrine.dbal.default_event_listener }
+            - { name: doctrine.dbal.default_event_listener, event: loadClassMetadata, method: loadClassMetadata }
 
 ## Swiftmailer Configuration
 swiftmailer.config:

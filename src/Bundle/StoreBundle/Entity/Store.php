@@ -9,7 +9,7 @@
  *
  */
 
-namespace Bundle\Ecommerce\StoreBundle\Entity;
+namespace Bundle\StoreBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
