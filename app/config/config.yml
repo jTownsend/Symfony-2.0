@@ -17,9 +17,10 @@ twig.config:
 
 ## Doctrine Configuration
 doctrine.dbal:
-    dbname:   symfony
-    user:     root
-    password: root
+    default_connection: default
+    dbname:             symfony
+    user:               root
+    password:           root
 
 doctrine.orm:
     auto_generate_proxy_classes: %kernel.debug%
@@ -30,6 +31,12 @@ doctrine.orm:
         StoreBundle: 
             type: annotation
             dir: Entity/
+
+services:
+    tableprefix:
+        class: DoctrineExtensions\TablePrefix
+        tags:
+        - { name: doctrine.dbal.default_event_listener }
 
 ## Swiftmailer Configuration
 swiftmailer.config:
