@@ -60,4 +60,12 @@ class Product
 	{
 		$this->title = $title; 
 	}
+	
+	/**
+	 * Get the reviews for this product
+	 */
+	public function getReviews()
+	{
+		return $this->Reviews; 
+	}
 }

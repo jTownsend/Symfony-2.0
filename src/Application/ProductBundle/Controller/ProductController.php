@@ -10,11 +10,13 @@ class ProductController extends Controller
     public function indexAction($urlTitle)
     {
 	   	$em = $this->get('doctrine.orm.entity_manager');
-		$product = new Product();
-		$product->setTitle('Halloween Bingo');
-		
-		$em->persist($product);
-		$em->flush();
+		$product = $em->find('ProductBundle:Product',1);
+		$reviews = $product->getReviews();
+		foreach($reviews as $review)
+		{
+			echo $review->getTitle();	
+		}
+		die;
 		
 		$product = array(
 			'baby-bingo' => array(

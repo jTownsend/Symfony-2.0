@@ -41,6 +41,16 @@ services:
         arguments: [local_]
         tags:
             - { name: doctrine.dbal.default_event_listener, event: loadClassMetadata, method: loadClassMetadata }
+    update.product.review.association:
+        class: Bundle\ReviewBundle\ReviewListener
+        arguments: [Bundle\ReviewBundle\Entity\Review, Reviews]
+        tags:
+            - { name: doctrine.dbal.default_event_listener, event: loadClassMetadata }
+    update.review.product.association:
+        class: Bundle\ProductBundle\ProductListener
+        arguments: [Bundle\ProductBundle\Entity\Product, Product]
+        tags:
+            - { name: doctrine.dbal.default_event_listener, event: loadClassMetadata }
 
 ## Swiftmailer Configuration
 swiftmailer.config:
@@ -68,4 +78,3 @@ assetpackager.config:
                 paths:
                 - bundles/bundle/css/pack1.css
                 - bundles/bundle/css/pack1_1.css
-
