@@ -41,13 +41,13 @@ services:
         arguments: [local_]
         tags:
             - { name: doctrine.dbal.default_event_listener, event: loadClassMetadata, method: loadClassMetadata }
-    update.product.review.association:
-        class: Bundle\ReviewBundle\ReviewListener
+    productbundle.product.review:
+        class: Application\JonTestBundle\AssociationListener
         arguments: [Bundle\ReviewBundle\Entity\Review, Reviews]
         tags:
             - { name: doctrine.dbal.default_event_listener, event: loadClassMetadata }
-    update.review.product.association:
-        class: Bundle\ProductBundle\ProductListener
+    reviewbundle.review.product:
+        class: Application\JonTestBundle\AssociationListener
         arguments: [Bundle\ProductBundle\Entity\Product, Product]
         tags:
             - { name: doctrine.dbal.default_event_listener, event: loadClassMetadata }

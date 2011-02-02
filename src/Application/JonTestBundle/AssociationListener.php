@@ -1,20 +1,20 @@
 <?php
-namespace Bundle\ProductBundle;
+namespace Application\JonTestBundle;
 use \Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\Event;
 
-class ProductListener
+class AssociationListener
 {
-	protected $_productObject = '';
+	protected $_object = '';
 	protected $_target = '';
 
     private $_updated = array();
 
-    public function __construct($productObject, $target)
+    public function __construct($_object, $target)
     {
-        $this->_productObject 	= (string) $productObject;
-		$this->_target			= (string) $target;
+        $this->_object 	= (string) $_object;
+		$this->_target	= (string) $target;
     }
 	
 	public function loadClassMetadata(LoadClassMetadataEventArgs $eventArgs)
@@ -28,13 +28,13 @@ class ProductListener
 				return;
 			}
 	
-			if (strpos($mappings[$this->_target]['targetEntity'], $this->_productObject) !== false)
+			if (strpos($mappings[$this->_target]['targetEntity'], $this->_object) !== false)
 			{
 				return;
 			}
 		
 		
-			$mappings[$this->_target]['targetEntity'] = $this->_productObject;
+			$mappings[$this->_target]['targetEntity'] = $this->_object;
 			$eventArgs->getClassMetadata()->associationMappings = $mappings;
 			
 			$this->_updated[] = $mappings[$this->_target]['targetEntity'];

@@ -16,6 +16,7 @@ class ProductController extends Controller
 		{
 			echo $review->getTitle();	
 		}
+		
 		die;
 		
 		$product = array(

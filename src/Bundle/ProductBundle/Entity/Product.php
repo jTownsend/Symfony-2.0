@@ -46,7 +46,7 @@ class Product
     private $price = 0.00;
 	
 	/**
-	 * @orm:OneToMany(targetEntity="%review.product_entity%", mappedBy="Product")
+	 * @orm:OneToMany(targetEntity="%productbundle.product.review%", mappedBy="Product")
 	 * @orm:OrderBy({"dateAdded" = "DESC"})
 	 */
 	private $Reviews;
