@@ -52,6 +52,12 @@ class Product
 	private $Reviews;
 	
 	/**
+	 * @orm:OneToMany(targetEntity="%productbundle.product.customer%", mappedBy="Product")
+	 * @orm:OrderBy({"dateAdded" = "DESC"})
+	 */
+	private $Customer;
+	
+	/**
 	 * Set the title of the product
 	 * 
 	 * @param $title  The product title

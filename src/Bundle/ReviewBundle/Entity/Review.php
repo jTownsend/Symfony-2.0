@@ -116,7 +116,7 @@ class Review
 	private $dateModified;
 
 	/**
-	 * @orm:ManyToOne(targetEntity="%bundlereview.review.product%", inversedBy="Reviews")
+	 * @orm:ManyToOne(targetEntity="%reviewbundle.review.product%", inversedBy="Reviews")
 	 * @orm:JoinColumn(name="product_id", referencedColumnName="id", unique=false)
 	 */
 	private $Product;

@@ -3,41 +3,33 @@ namespace Application\JonTestBundle;
 use \Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\Event;
+use Symfony\Component\DependencyInjection\Container;
 
 class AssociationListener
 {
-	protected $_object = '';
-	protected $_target = '';
+	protected $_container = '';
+	//protected $_target = '';
 
     private $_updated = array();
 
-    public function __construct($_object, $target)
+    public function __construct(Container $container)
     {
-        $this->_object 	= (string) $_object;
-		$this->_target	= (string) $target;
+        $this->_container 	=  $container;
+		//$this->_target	= (string) $target;
     }
 	
 	public function loadClassMetadata(LoadClassMetadataEventArgs $eventArgs)
 	{
 		$mappings = $eventArgs->getClassMetadata()->associationMappings;
-		
-		if(isset($mappings[$this->_target]))
+		$matches = array();
+		foreach($mappings as $key => $mapping)
 		{
-			if (in_array($mappings[$this->_target]['targetEntity'], $this->_updated))
-			{
-				return;
-			}
-	
-			if (strpos($mappings[$this->_target]['targetEntity'], $this->_object) !== false)
-			{
-				return;
-			}
-		
-		
-			$mappings[$this->_target]['targetEntity'] = $this->_object;
-			$eventArgs->getClassMetadata()->associationMappings = $mappings;
-			
-			$this->_updated[] = $mappings[$this->_target]['targetEntity'];
+			preg_match('#%(.*)%#', $mappings[$key]['targetEntity'], $matches);
+			$mappings[$key]['targetEntity'] = $this->_container->getParameter($matches[1]);
 		}
+		
+		$eventArgs->getClassMetadata()->associationMappings = $mappings;
+		var_dump($mappings);
+		die;
 	}
 }

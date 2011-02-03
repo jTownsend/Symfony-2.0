@@ -35,20 +35,20 @@ doctrine.orm:
             type: annotation
             dir: Entity/
 
+parameters:
+    productbundle.product.review: Bundle\ReviewBundle\Entity\Review
+    reviewbundle.review.product: Bundle\ProductBundle\Entity\Product
+    productbundle.product.customer: Bundle\ReviewBundle\Entity\Review
+
 services:
     tableprefix:
         class: DoctrineExtensions\TablePrefixListener
         arguments: [local_]
         tags:
             - { name: doctrine.dbal.default_event_listener, event: loadClassMetadata, method: loadClassMetadata }
-    productbundle.product.review:
+    dynamic_targets:
         class: Application\JonTestBundle\AssociationListener
-        arguments: [Bundle\ReviewBundle\Entity\Review, Reviews]
-        tags:
-            - { name: doctrine.dbal.default_event_listener, event: loadClassMetadata }
-    reviewbundle.review.product:
-        class: Application\JonTestBundle\AssociationListener
-        arguments: [Bundle\ProductBundle\Entity\Product, Product]
+        arguments: [@service_container]
         tags:
             - { name: doctrine.dbal.default_event_listener, event: loadClassMetadata }
 

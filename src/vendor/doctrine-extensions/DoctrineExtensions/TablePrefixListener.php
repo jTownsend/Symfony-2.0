@@ -14,22 +14,11 @@ class TablePrefixListener
     {
         $this->_prefix = (string) $prefix;
     }
-	
-	/**
-     * Registers a loadClassMetadata listeners.
-     *
-     * @param EventDispatcher $dispatcher An EventDispatcher instance
-     * @param integer         $priority   The priority
-     */
-    /*public function register(EventDispatcher $dispatcher, $priority = 0)
-    {
-        $dispatcher->connect('loadClassMetadata', array($this, 'loadClassMetadata'), $priority);
-    }*/
 
     public function loadClassMetadata(LoadClassMetadataEventArgs $eventArgs)
     {
         $classMetadata = $eventArgs->getClassMetadata();
-
+		
     	if (in_array($classMetadata->getTableName(), $this->_updated))
     	{
     		return;
