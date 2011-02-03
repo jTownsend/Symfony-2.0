@@ -29,7 +29,7 @@ class AssociationListener
 		}
 		
 		$eventArgs->getClassMetadata()->associationMappings = $mappings;
-		var_dump($mappings);
-		die;
+		/*var_dump($mappings);
+		die;*/
 	}
 }

@@ -14,10 +14,10 @@ class ProductController extends Controller
 		$reviews = $product->getReviews();
 		foreach($reviews as $review)
 		{
-			echo $review->getTitle();	
+			//echo $review->getTitle();	
 		}
 		
-		die;
+		
 		
 		$product = array(
 			'baby-bingo' => array(
