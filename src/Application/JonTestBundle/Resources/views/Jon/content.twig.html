@@ -3,7 +3,43 @@
 	<link href="{{ asset('bundles/jontest/css/main.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 {% block content %}
-	{{ content|raw }}
+	<div id="second" style="width:50px;height15px;background-color:#039;float:right;color:#FFF;padding:5px;text-align:center">Second</div>
+    <div id="first" style="width:50px;height15px;background-color:#039;float:right;margin-right:15px;color:#FFF;padding:5px;text-align:center">First</div>
+    <div id="third" style="display:none;height:400px;width:400px;border:1px solid #000;float:right"></div>
+    <script>
+		$("#first").toggle(function() {
+			$("#third").show();
+			$.ajax({
+				url: 'app_dev.php/ajaxtest',
+				type: 'POST',
+				dataType: 'json',
+				data: {
+						productId 	: 'AjaxTest',
+					  },
+				success: function(data) {
+					if (data.status == 1) 
+					{	
+						alert('Success');
+					} 
+					else 
+					{
+						alert(data.errorMessage);
+					}
+				}					
+			});
+		},
+			function() {
+				$("#third").hide();
+		});
+		$("#second").toggle(function() {
+			$("#third").show();
+		},
+			function() {
+				$("#third").hide();
+		});
+	</script>
+    {{ content|raw }}
     <div class="clr"></div>
+    
 	</div>
 {% endblock %}

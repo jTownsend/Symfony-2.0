@@ -3,10 +3,13 @@
 namespace Application\JonTestBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\BrowserKit\Response;
 
 class ContentController extends Controller
 {
-    public function indexAction()
+    private $ajaxResponse = array();
+	
+	public function indexAction()
     {
         $em = $this->get('doctrine.orm.entity_manager');
 		$query = $em->createQuery('SELECT s FROM Bundle\StoreBundle\Entity\Store s');
@@ -28,4 +31,15 @@ class ContentController extends Controller
 
 		return $this->render('JonTestBundle:Jon:content.twig.html', array('content' => $curStore->getLandingPage()));
     }
+	
+	public function ajaxAction()
+	{
+		if ($this->get('request')->isXmlHttpRequest())
+		{
+			echo get_class(new Response('Test!'));
+			return new Response();
+		}
+	}
+	
+	
 }

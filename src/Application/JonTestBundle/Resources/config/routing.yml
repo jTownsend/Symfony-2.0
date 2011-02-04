@@ -4,3 +4,7 @@ products:
 
 product:
     resource: ProductBundle/Resources/config/routing.yml
+
+ajaxtest:
+    pattern: /ajaxtest
+    defaults: { _controller: JonTestBundle:Content:ajax }
