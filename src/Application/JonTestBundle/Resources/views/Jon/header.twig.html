@@ -7,8 +7,8 @@
                 {% if store_title == store['title'] %}
                 	{% set selected = 'selected' %}
                 {% endif %}
-            <a href="{{ path(store['href']) }}" class="{{ selected }}">
-                <img src="{{ asset(store['nav_image']) }}" width="{{ store['nav_image_w'] }}" height="{{ store['nav_image_h'] }}" />
+            <a href="http://{{ store['url'] }}/web/app_dev.php" class="{{ selected }}">
+                <img src="http://localhost/Symfony-2.0/web{{ asset(store['navImageArray']['image']) }}" width="{{ store['navImageArray']['w'] }}" height="{{ store['navImageArray']['h'] }}" />
             </a>
             {% endfor %}
         </div>

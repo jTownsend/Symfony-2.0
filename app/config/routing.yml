@@ -1,9 +1,6 @@
 homepage:
     pattern:  /
-    defaults: { _controller: FrameworkBundle:Default:index }
-
-bridal:
-    resource: JonTestBundle/Resources/config/routing.yml
+    defaults: { _controller: JonTestBundle:Content:index }
 
 products:
     resource: JonTestBundle/Resources/config/routing.yml

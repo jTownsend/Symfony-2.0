@@ -27,7 +27,7 @@ use Doctrine\ORM\Internal\Hydration;
  * 	@orm:index(name="url", columns={"url"}),
  * 	@orm:index(name="checkout_key", columns={"checkout_key"})
  * })
- * @orm:Entity
+ * @orm:Entity(repositoryClass="Bundle\StoreBundle\Entity\StoreRepository")
  */
 class Store
 {

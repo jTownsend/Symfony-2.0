@@ -8,29 +8,8 @@ class HeaderController extends Controller
 {
     public function indexAction()
     {
-         $stores = array(
-			array(
-				  'title'		=> 'Bridal',
-				  'href'		=> 'bridal',
-				  'nav_image'	=> 'images/assets/logos/navigation/bridal_shower_games_atoz/header.png',
-				  'nav_image_w'	=> '37px',
-				  'nav_image_h'	=> '59px'
-				  ),
-			array(
-				  'title'		=> 'Baby',
-				  'href'		=> 'baby',
-				  'nav_image'	=> 'images/assets/logos/navigation/baby_shower_games_atoz/header.png',
-				  'nav_image_w'	=> '39px',
-				  'nav_image_h'	=> '60px'
-				  ),
-			array(
-				  'title'		=> 'Birthday',
-				  'href'		=> 'birthday',
-				  'nav_image'	=> 'images/assets/logos/navigation/birthday_games_atoz/header.png',
-				  'nav_image_w'	=> '40px',
-				  'nav_image_h'	=> '55px'
-				  )
-		);
+    	$em = $this->get('doctrine.orm.entity_manager');
+		$stores = $em->getRepository('Bundle\StoreBundle\Entity\Store')->getStores();
 		
 		$headerCategories = array(
 			array(
