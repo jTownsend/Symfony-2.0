@@ -3,7 +3,7 @@
 namespace Application\JonTestBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\HttpFoundation\Response;
 
 class ContentController extends Controller
 {
@@ -36,8 +36,7 @@ class ContentController extends Controller
 	{
 		if ($this->get('request')->isXmlHttpRequest())
 		{
-			echo get_class(new Response('Test!'));
-			return new Response();
+			return new Response(json_encode(array('test' => 'working!')));
 		}
 	}
 	
