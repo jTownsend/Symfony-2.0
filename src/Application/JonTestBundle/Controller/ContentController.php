@@ -2,12 +2,15 @@
 
 namespace Application\JonTestBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller,
+	Symfony\Component\HttpFoundation\Response,
+	Symfony\Component\EventDispatcher\Event,
+	Symfony\Component\EventDispatcher\EventDispatcher;
 
 class ContentController extends Controller
 {
     private $ajaxResponse = array();
+	
 	
 	public function indexAction()
     {
@@ -34,11 +37,20 @@ class ContentController extends Controller
 	
 	public function ajaxAction()
 	{
+		$dispatcher = $this->get('event_dispatcher');
+		$event = new Event($this, 'ajaxTestEvent');
+		
+		$dispatcher->filter($event, array());
+		$arguments = $event->getReturnValue();
+		print_r($arguments);
 		if ($this->get('request')->isXmlHttpRequest())
 		{
-			return new Response(json_encode(array('test' => 'working!')));
+			$response = array(
+				'message' 	=> 'Working!',
+				'status'	=> 1
+			);
+			$response = array_merge($response, $arguments);
+			return new Response(json_encode($response));
 		}
-	}
-	
-	
+	}	
 }

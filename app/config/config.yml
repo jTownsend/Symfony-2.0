@@ -51,6 +51,11 @@ services:
         arguments: [@service_container]
         tags:
             - { name: doctrine.dbal.default_event_listener, event: loadClassMetadata }
+    store.listener:
+        class: Bundle\StoreBundle\StoreListener
+        arguments: [@event_dispatcher]
+        tags:
+            - { name: doctrine.dbal.default_event_listener, event: ajaxTestEvent }
 
 ## Swiftmailer Configuration
 swiftmailer.config:
