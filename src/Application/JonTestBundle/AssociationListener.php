@@ -8,14 +8,12 @@ use Symfony\Component\DependencyInjection\Container;
 class AssociationListener
 {
 	protected $_container = '';
-	//protected $_target = '';
 
     private $_updated = array();
 
     public function __construct(Container $container)
     {
         $this->_container 	=  $container;
-		//$this->_target	= (string) $target;
     }
 	
 	public function loadClassMetadata(LoadClassMetadataEventArgs $eventArgs)
