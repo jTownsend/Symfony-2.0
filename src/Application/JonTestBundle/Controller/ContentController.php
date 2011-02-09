@@ -38,21 +38,11 @@ class ContentController extends Controller
 	public function ajaxAction()
 	{
 		$dispatcher = $this->get('event_dispatcher');
-		echo 'Content :: ' . get_class($dispatcher);
-		$event = new Event($this, 'ajax.test_event');
+		$event = new Event(null, 'ajax.test_event');
+		
 		$dispatcher->filter($event, array());
-		
-		/*if ($dispatcher->hasListeners('ajax.test_event'))
-		{
-			echo 'Has listeners';	
-		}
-		else
-		{
-			echo 'Has NO listeners';	
-		}*/
-		
 		$arguments = $event->getReturnValue();
-		//echo '<br />' . sizeof($arguments) . '<br />';
+		
 		if ($this->get('request')->isXmlHttpRequest())
 		{
 			$response = array(
